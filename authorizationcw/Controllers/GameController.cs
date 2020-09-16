@@ -4,7 +4,7 @@ using authorizationcw.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Descriptionizationcw.Controllers
+namespace authorizationcw.Controllers
 {
     public class GameController : Controller
     {
@@ -13,12 +13,13 @@ namespace Descriptionizationcw.Controllers
         {
             _context = context;
         }
-        
+        [Authorize(Roles = "user, employee, admin, temp")]
         public IActionResult Index()
         {
             return View(_context);
         }
-        
+
+        [Authorize(Roles = "user, employee, admin")]
         // View Game Details
         public IActionResult GameDetails(int GameModelID)
         {      
@@ -92,14 +93,15 @@ namespace Descriptionizationcw.Controllers
             }
         } 
         // Display add game form
-        [Authorize]
+
+        [Authorize(Roles = "employee, admin")]
         public IActionResult CreateForm()
         {
             return View();
         } 
         
         // Display update form
-        [Authorize]
+        [Authorize(Roles = "employee, admin")]
         public IActionResult UpdateForm(int GameModelID)
         {
             GameModel matchingGameModel = _context.Games.FirstOrDefault(GameModel => GameModel.id == GameModelID);
@@ -114,7 +116,7 @@ namespace Descriptionizationcw.Controllers
         } 
         
         // Display page to delete Game
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteConf(int GameModelID)
         {            
             // find GameModel by id

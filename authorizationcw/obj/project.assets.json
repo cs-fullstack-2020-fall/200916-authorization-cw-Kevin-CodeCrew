@@ -2111,31 +2111,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kyancy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kyancy\\Code_School\\authorization\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\authorizationcw.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Code_School\\cohort5\\sprint_three\\dotnet\\200916\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\authorizationcw.csproj",
       "projectName": "authorizationcw",
-      "projectPath": "C:\\Users\\kyancy\\Code_School\\authorization\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\authorizationcw.csproj",
-      "packagesPath": "C:\\Users\\kyancy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kyancy\\Code_School\\authorization\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\obj\\",
+      "projectPath": "C:\\Users\\student\\Code_School\\cohort5\\sprint_three\\dotnet\\200916\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\authorizationcw.csproj",
+      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\student\\Code_School\\cohort5\\sprint_three\\dotnet\\200916\\200916-authorization-cw-Kevin-CodeCrew\\authorizationcw\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kyancy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2195,7 +2188,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
