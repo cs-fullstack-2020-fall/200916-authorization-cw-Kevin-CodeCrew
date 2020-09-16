@@ -1,0 +1,13 @@
+@* display model bound form using partial with an extra hidden field that sends data to the UpdateBook endpoint on submit *@
+
+@model authorizationcw.Models.GameModel
+
+<h1>Update A Book</h1>
+@using(@Html.BeginForm("UpdateGame", "Game"))
+{
+    <partial name = "_form"/>
+    <div>
+        @Html.HiddenFor(game => game.id)
+    </div>
+    <button class="btn btn-success" type="submit">Save Changes</button>
+}

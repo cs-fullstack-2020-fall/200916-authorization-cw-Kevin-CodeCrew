@@ -1,0 +1,27 @@
+@* partial to display form fields for game propeties *@
+
+@model authorizationcw.Models.GameModel
+
+<div class = "form-group">
+    @Html.LabelFor(game => game.Title)
+    @Html.TextBoxFor(game =>game.Title, new { @class = "form-control" } )
+    @Html.ValidationMessageFor(game => game.Title)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(game => game.Description)
+    @Html.TextBoxFor(game =>game.Description, new { @class = "form-control" } )
+    @Html.ValidationMessageFor(game => game.Description)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(game => game.Publisher)
+    @Html.TextBoxFor(game =>game.Publisher, new { @class = "form-control" } )
+    @Html.ValidationMessageFor(game => game.Publisher)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(game => game.Rating)
+    @Html.TextBoxFor(game =>game.Rating, new { @class = "form-control" } )
+    @Html.ValidationMessageFor(game => game.Rating)
+</div>

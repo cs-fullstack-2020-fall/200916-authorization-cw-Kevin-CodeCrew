@@ -1,0 +1,10 @@
+@model authorizationcw.Data.ApplicationDbContext
+
+<h1>Library Database</h1>
+@foreach (GameModel item in @Model.Games)
+{
+    <partial name = "_book" model = "@item"/>
+    <a asp-action = "BookDetails" asp-controller = "Game" asp-route-GameModelID = "@item.id">
+        <button class="btn btn-secondary">Details</button>
+    </a>
+}

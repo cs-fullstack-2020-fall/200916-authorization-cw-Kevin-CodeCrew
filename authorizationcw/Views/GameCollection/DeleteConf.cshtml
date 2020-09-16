@@ -1,0 +1,13 @@
+@* confirmation page with navigation to delete a book or return to details *@
+
+@model authorizationcw.Models.GameModel
+
+<h1>Are you sure you want to delete book @Model.id</h1>
+<partial name = "_game"/>
+<a asp-action = "DeleteGame" asp-controller = "Game" asp-route-GameModelID = "@Model.id">
+    <button class="btn btn-danger">Delete Game</button>
+</a>
+<a asp-action = "GameDetails" asp-controller = "Game" asp-route-GameModelID = "@Model.id">
+    <button class="btn btn-primary">Back to Game Details</button>
+</a>
+

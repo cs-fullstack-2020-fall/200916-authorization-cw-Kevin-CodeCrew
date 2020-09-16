@@ -1,0 +1,13 @@
+@* display book props passesd as model using partial and include navigation to edit and delete*@
+
+@model authorizationcw.Models.GameModel
+
+<h1>Details for Book @Model.id</h1>
+
+<partial name = "_book" model = "@Model"/>
+<a asp-action = "UpdateForm" asp-controller = "Game" asp-route-GameModelID = "@Model.id">
+    <button class="btn btn-warning">Edit Game</button>
+</a>
+<a asp-action = "DeleteConf" asp-controller = "Game" asp-route-GameModelID = "@Model.id">
+    <button class="btn btn-danger">Delete Game</button>
+</a>
