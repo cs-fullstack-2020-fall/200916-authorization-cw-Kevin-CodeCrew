@@ -1,8 +1,6 @@
-@* display model bound form using partial that sends data to the CreateBook endpoint on submit *@
-
 @model authorizationcw.Models.GameModel
 
-<h1>Add A New Book</h1>
+<h1>Add a New Game</h1>
 @using(@Html.BeginForm("CreateGame", "Game"))
 {
     <partial name = "_form"/>

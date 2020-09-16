@@ -13,62 +13,59 @@ namespace Descriptionizationcw.Controllers
         {
             _context = context;
         }
-        // View All Bands
+        
         public IActionResult Index()
         {
             return View(_context);
         }
-        // View GameModel Details
+        
+        // View Game Details
         public IActionResult GameDetails(int GameModelID)
         {      
-            // find GameModel in db by id
             GameModel matchingGameModel = _context.Games.FirstOrDefault(GameModel => GameModel.id == GameModelID);
-            // if GameModel is found
             if(matchingGameModel != null)
             {
                 return View(matchingGameModel);
-            } else 
-            // if GameModel is not found
+            } 
+            else 
             {
                 return Content("No GameModel found");
             }
         }
-        // Add GameModel to DB
+
+        // Add Game
         [HttpPost]
         public IActionResult CreateGame(GameModel newGameModel)
         {
-            // if data passed meets model validation
             if(ModelState.IsValid)
             {
-                // add to db
                 _context.Games.Add(newGameModel);
                 _context.SaveChanges();
                 return RedirectToAction("Index");  
-            } else 
+            } 
+            else 
             {
                 return View("CreateForm", newGameModel);
             }
         } 
-        // Update GameModel in DB
+        
+        // Update Game
         [HttpPost]
         public IActionResult UpdateGame(GameModel updateGameModel)
         {
-            // find GameModel by id
             GameModel matchingGameModel = _context.Games.FirstOrDefault(GameModel => GameModel.id == updateGameModel.id);
             if(matchingGameModel != null)
             {   
-                // if data passed meets model validation
                 if(ModelState.IsValid)
                 {
-                    // update found GameModel with data passed
                     matchingGameModel.Title = updateGameModel.Title;
                     matchingGameModel.Description = updateGameModel.Description;
                     matchingGameModel.Publisher = updateGameModel.Publisher;
                     matchingGameModel.Rating = updateGameModel.Rating;
                     _context.SaveChanges();
                     return RedirectToAction("Index");  
-                } else 
-                // render form again populated with invalid data
+                } 
+                else 
                 {
                     return View("UpdateForm", updateGameModel);
                 }
@@ -77,45 +74,46 @@ namespace Descriptionizationcw.Controllers
                 return Content("No GameModel found");
             }
         } 
-        // Delete GameModel from DB
+        // Delete Game
         public IActionResult DeleteGame(int GameModelID)
         {
-            // find GameModel in db by id
-            GameModel matchingGameModel = _context.Games.FirstOrDefault(GameModel => GameModel.id == GameModelID);
-            // if GameModel is found
+            GameModel matchingGameModel = _context.Games
+                .FirstOrDefault(GameModel => GameModel.id == GameModelID);
+                
             if(matchingGameModel != null)
             {
-                // remove from db
                 _context.Remove(matchingGameModel);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
-            } else 
+            } 
+            else 
             {
-                return Content("No GameModel found");
+                return Content("No Game found");
             }
         } 
-        // Display form to add GameModel - Must be logged in to access
+        // Display add game form
         [Authorize]
         public IActionResult CreateForm()
         {
             return View();
         } 
-        // Display form to update GameModel - Must be logged in to access
+        
+        // Display update form
         [Authorize]
         public IActionResult UpdateForm(int GameModelID)
         {
-            // find GameModel in db by id
             GameModel matchingGameModel = _context.Games.FirstOrDefault(GameModel => GameModel.id == GameModelID);
-            // if GameModel is found
             if(matchingGameModel != null)
             {
                 return View(matchingGameModel);
-            } else 
+            } 
+            else 
             {
                 return Content("No GameModel found");
             }
         } 
-        // Display page to delete GameModel - Must be logged in to access
+        
+        // Display page to delete Game
         [Authorize]
         public IActionResult DeleteConf(int GameModelID)
         {            
@@ -125,9 +123,10 @@ namespace Descriptionizationcw.Controllers
             if(matchingGameModel != null)
             {
                 return View(matchingGameModel);
-            } else 
+            } 
+            else 
             {
-                return Content("No GameModel found");
+                return Content($"No Game found for game id {GameModelID}");
             }
         }
     }

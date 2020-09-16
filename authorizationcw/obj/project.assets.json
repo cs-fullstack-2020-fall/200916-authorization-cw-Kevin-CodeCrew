@@ -2105,7 +2105,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.8",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.8",
-      "Microsoft.AspNetCore.MVC.Razor.RuntimeCompilation >= *",
+      "Microsoft.AspNetCore.MVC.Razor.RuntimeCompilation >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8"
     ]
@@ -2166,7 +2166,7 @@
           },
           "Microsoft.AspNetCore.MVC.Razor.RuntimeCompilation": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.8, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
